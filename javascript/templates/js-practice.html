@@ -9,8 +9,8 @@
 
 <h1>JavaScript Practice</h1>
 <p>
-  For each numbered problem, fill in the corresponding <code>&lt;script&gt;</code> 
-  section in the source with JavaScript to solve the problem. The location of 
+  For each numbered problem, fill in the corresponding <code>&lt;script&gt;</code>
+  section in the source with JavaScript to solve the problem. The location of
   this file is <strong>templates/js-practice.html</strong>.</p>
 <p>
   <b>Note:</b> you should only add JavaScript; you cannot change the HTML otherwise <b>at all</b>.
@@ -36,7 +36,11 @@
 
 <script>
   "use strict";
-  // code here for above problem
+  var popUpButton = document.getElementById('popup-alert-button');
+  popUpButton.addEventListener('click', popUpOnClick);
+  function popUpOnClick(){
+    alert('Hello');
+  }
 </script>
 
 
@@ -78,7 +82,17 @@
 <script>
   "use strict";
 
-  // code here for the above problem
+  // var submitBtn = document.getElementById('multiply-btn');
+  // var value2 = document.getElementById.values
+  // console.log(value2)
+  // console.log(typeof(value2))
+
+  // submitBtn.addEventListener('submit', calculate);
+
+
+  // function calculate(evt) {
+  //   print
+  // }
 
 </script>
 

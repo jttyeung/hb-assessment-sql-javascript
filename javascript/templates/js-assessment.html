@@ -9,7 +9,7 @@
 
 <h1>JavaScript Assessment</h1>
 <p>
-  For each numbered problem, fill in the corresponding <code>&lt;script&gt;</code> 
+  For each numbered problem, fill in the corresponding <code>&lt;script&gt;</code>
   section with JavaScript to solve the problem. The location of this file is
   <strong>templates/js-assessment.html</strong>.</p>
 <p>
@@ -37,7 +37,14 @@
 
 <script>
   "use strict";
-  // code here for above-problem
+
+  var message = document.getElementById('message-to-change');
+  var button = document.getElementById('change-hello-to-goodbye-button');
+  button.addEventListener('click', changeMessage);
+  function changeMessage(evt){
+    message.innerHTML = 'goodbye';
+  }
+
 </script>
 
 <div class="hint">
@@ -65,7 +72,12 @@
 
 <script>
   "use strict";
-  // code here for above problem
+  var submitBtn = document.getElementById('prevent-form-submission-button');
+  submitBtn.addEventListener('click', preventSubmit)
+  function preventSubmit(evt) {
+    alert('Not today!')
+    evt.preventDefault();
+  }
 </script>
 
 <div class="hint">
@@ -91,22 +103,17 @@
 <script>
   "use strict";
 
-//  Here's a stub of a function you can use!
+ function reverseString() {
+   var msg = "Porcupines are cute";
 
-//  function reverseString() {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+   // do some stuff here to reverse that string into a new variable
+   var newMsg = "This should be the reversed string";
 
-// Here's a stub of event stuff you could use
-//
+   alert(newMsg);
+ }
 
-//  var button = document.getElementById('reverse-string-button');
-//  button.addEventListener('click', reverseString);
+ var button = document.getElementById('reverse-string-button');
+ button.addEventListener('click', reverseString);
 </script>
 
 
