@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Skills JavaScript</title>
   <link rel="stylesheet" href="/static/styles.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
 
@@ -143,7 +144,9 @@
 
 <script>
   "use strict";
-  // put your code here
+  $('#kittenz-rule').on('dblclick', function(evt){
+    $('#kittenz-rule').attr('src','https://s-media-cache-ak0.pinimg.com/564x/ba/6e/2d/ba6e2d22b237115b6f40df24471424e2.jpg');
+  });
 </script>
 
 <div class="hint">
@@ -174,7 +177,62 @@
 
 <script>
   "use strict";
-  // put your code here
+
+
+  var randNum = 0;
+
+  $('#play-guessing-game').on('click', playGame);
+
+  function playGame() {
+      // enable game fields
+      $('#play-guessing-game').attr('disabled', 'disabled');
+      $('#number-guessed').removeAttr('disabled');
+      $('#try-this-number').removeAttr('disabled');
+
+      // generate a random number
+      var randNum = Math.ceil(Math.random() * 100);
+
+      // ask user to guess number
+      $('#number-guessing-msg').html('Guess a number between 1 and 100!');
+
+      // checks user guess
+      $('#try-this-number').on('click', checkGuess);
+
+      function checkGuess(evt) {
+          // prevents submitting guess
+          evt.preventDefault();
+
+          // reassigns guess value
+          var guess = $('#number-guessed').val();
+
+          // checks if number is within bounds and returns a message if not
+          if (guess < 1 || guess > 100){
+              $('#number-guessing-msg').html('That\'s not a number between 1 and 100! Try another guess.');
+
+          } else {
+          // checks valid guess and returns a message
+              if (guess < randNum) {
+                $('#number-guessing-msg').html('Too low!');
+              } else if (guess > randNum) {
+                $('#number-guessing-msg').html('Too high!');
+              } else {
+                $('#number-guessing-msg').html('Congrats, you\'ve guessed my number!');
+
+                // resets the game
+                $('#play-guessing-game').removeAttr('disabled');
+                $('#number-guessed').attr('disabled', 'disabled');
+                $('#try-this-number').attr('disabled', 'disabled');
+                $('#number-guessed').val('');
+                $('#number-guessed').attr('placeholder', 'Guess');
+
+              }
+          }
+
+      }
+  }
+
+
+
 </script>
 
 
@@ -239,7 +297,13 @@
     $("#t-rex-img").append(tRexPhoto);
   }
 
-  // put your code here
+  function doAttack(evt) {
+      evt.preventDefault();
+      var attackVictim = $('#victim-name').val();
+      $.post('/t-rex-attack.json', attackVictim, showTRexResults);
+  }
+
+  $('#Attack').on('click', doAttack);
 
 </script>
 
