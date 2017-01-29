@@ -105,9 +105,8 @@
 
  function reverseString() {
    var msg = "Porcupines are cute";
-
-   // do some stuff here to reverse that string into a new variable
-   var newMsg = "This should be the reversed string";
+   var reversedMsg = Array.from(msg).reverse()
+   var newMsg = reversedMsg.join('');
 
    alert(newMsg);
  }
