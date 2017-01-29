@@ -51,7 +51,7 @@ INSERT INTO awards (name, year, winner_id)
           ( SELECT model_id
             FROM models
             WHERE year = 2015
-              AND name = 'Outlook')
+              AND name = 'Outback')
          );
 
 INSERT INTO awards (name, year)
