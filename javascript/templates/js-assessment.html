@@ -42,9 +42,11 @@
 
   var message = document.getElementById('message-to-change');
   var button = document.getElementById('change-hello-to-goodbye-button');
+
   button.addEventListener('click', changeMessage);
+
   function changeMessage(evt){
-    message.innerHTML = 'goodbye';
+      message.innerHTML = 'goodbye';
   }
 
 </script>
@@ -74,12 +76,16 @@
 
 <script>
   "use strict";
+
   var submitBtn = document.getElementById('prevent-form-submission-button');
+
   submitBtn.addEventListener('click', preventSubmit)
+
   function preventSubmit(evt) {
-    alert('Not today!')
-    evt.preventDefault();
+      alert('Not today!')
+      evt.preventDefault();
   }
+
 </script>
 
 <div class="hint">
@@ -106,15 +112,17 @@
   "use strict";
 
  function reverseString() {
-   var msg = "Porcupines are cute";
-   var reversedMsg = Array.from(msg).reverse()
-   var newMsg = reversedMsg.join('');
+     var msg = "Porcupines are cute";
+     var reversedMsg = Array.from(msg).reverse()
+     var newMsg = reversedMsg.join('');
 
-   alert(newMsg);
+     alert(newMsg);
  }
 
  var button = document.getElementById('reverse-string-button');
+
  button.addEventListener('click', reverseString);
+
 </script>
 
 
@@ -145,9 +153,12 @@
 
 <script>
   "use strict";
+
   $('#kittenz-rule').on('dblclick', function(evt){
-    $('#kittenz-rule').attr('src','https://s-media-cache-ak0.pinimg.com/564x/ba/6e/2d/ba6e2d22b237115b6f40df24471424e2.jpg');
-  });
+      $('#kittenz-rule').attr('src','https://s-media-cache-ak0.pinimg.com/564x/ba/6e/2d/ba6e2d22b237115b6f40df24471424e2.jpg');
+      }
+  );
+
 </script>
 
 <div class="hint">
